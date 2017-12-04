@@ -1,6 +1,6 @@
 # jingqian
 # 20171204
-# use in rstudio: get active document context !
+# use in rstudio: get active document context
 install.packages("rstudioapi")
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
