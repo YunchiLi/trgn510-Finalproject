@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Import data and generate PCA plots and stats of my data.
   
 ```{r}
-setwd('/home/jingqian/www/shiny-server/finalproject/PCA')
+setwd('/home/jingqian/www/shiny-server/finalproject')
 library(ggfortify)
 
 final <- read.table('finaldata.txt', header = TRUE, sep = '\t', check.names = FALSE)
