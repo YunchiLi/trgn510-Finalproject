@@ -1,0 +1,68 @@
+---
+title: "finalproject"
+author: "Jing Qian"
+date: "12/4/2017"
+output: html_document
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Step 1
+Import data and generate PCA plots and stats of my data.
+  
+```{r}
+setwd('/home/jingqian/www/shiny-server/finalproject/PCA')
+library(ggfortify)
+
+final <- read.table('finaldata.txt', header = TRUE, sep = '\t', check.names = FALSE)
+asian <- read.table('asian.txt', header = FALSE)
+black <- read.table('black.txt', header = FALSE)
+american <- read.table('american indian.txt', header = FALSE)
+white <- read.table('white.txt', header = FALSE)
+row.names(final) <- final$gene
+final <- final[-c(1)]
+final <- t(final)
+final <- as.data.frame(final)
+final$Samples <- rownames(final)
+final$Group <- NA
+
+final$Group <- ifelse(final$Samples %in% asian$V1, 'ASIAN',
+                      ifelse(final$Samples %in% black$V1, 'BLACK',
+                             ifelse(final$Samples %in% american$V1, 'AMERICAN INDIAN',
+                                    ifelse(final$Samples %in% white$V1, 'WHITE','UnKnown'))))
+final.data <- final[c(1:60483)]
+autoplot(prcomp(final.data), data = final, colour = 'Group')
+
+PCA = prcomp(final.data)
+summary <- summary(PCA)
+write.table(summary$importance, file = 'TCGA-BRCA-PCA.txt', sep = '\t', col.names = NA)
+
+```
+
+<!-- The text below is just to reformat the page, using css styling -->
+```{r results="asis", echo = FALSE}
+cat("
+<style>
+h1 {
+    background-color: #990000;
+    color:#FFF;
+    text-align:center;
+}
+h2 {
+   background-color:#f3d6d6;
+   text-align:center;
+   color:#333
+}
+h3 {
+   margin-left:-5px;
+   color:#333
+}
+
+</style>
+")
+```
+<!-- Eat Well Sleep Well -->
