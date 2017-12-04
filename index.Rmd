@@ -1,5 +1,5 @@
 ---
-title: "finalproject"
+title: "trgn510-Finalproject"
 author: "Jing Qian"
 date: "12/4/2017"
 output: html_document
@@ -19,10 +19,10 @@ setwd('/home/jingqian/www/shiny-server/finalproject/PCA')
 library(ggfortify)
 
 final <- read.table('finaldata.txt', header = TRUE, sep = '\t', check.names = FALSE)
-asian <- read.table('asian.txt', header = FALSE)
-black <- read.table('black.txt', header = FALSE)
+asian <- read.table('asians.txt', header = FALSE)
+black <- read.table('blacks.txt', header = FALSE)
 american <- read.table('american indian.txt', header = FALSE)
-white <- read.table('white.txt', header = FALSE)
+white <- read.table('whites.txt', header = FALSE)
 row.names(final) <- final$gene
 final <- final[-c(1)]
 final <- t(final)
@@ -65,4 +65,3 @@ h3 {
 </style>
 ")
 ```
-<!-- Eat Well Sleep Well -->
