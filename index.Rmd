@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-# Step 1
-Import data and generate PCA plots and stats of my data.
+# Import data and generate PCA plots and stats of my data.
   
 ```{r}
 setwd('/home/jingqian/www/shiny-server/finalproject')
