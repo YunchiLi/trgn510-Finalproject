@@ -1,5 +1,5 @@
 # Description
-This repository is for my final project in TRGN 510. To make TCGA-BRCA_PCA.R (click [here](https://github.com/jingqian05/finalproject/blob/master/PCA/TCGA-BRCA_PCA.R) to see the code) possibel to run, first import 5 .txt files into RStudio and then run the script. It will generate PCA plots and stats of my data. 
+This repository is for my final project in TRGN 510. To make TCGA-BRCA_PCA.R (click [here](https://github.com/jingqian05/trgn510-Finalproject/blob/master/TCGA-BRCA_PCA.R) to see the code) possibel to run, first import 5 .txt files into RStudio and then run the script. It will generate PCA plots and stats of my data. 
 
 # Datasets
 First I downloade my 40 samples from [NCI’s Genomic Data Commons](https://portal.gdc.cancer.gov). All of them are breast cancer RNA-seq in HTSeq-FPKM.
