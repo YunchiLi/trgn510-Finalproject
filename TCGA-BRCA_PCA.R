@@ -5,6 +5,7 @@ install.packages("rstudioapi")
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # setwd('/.')
+install.packages("ggfortify")
 library(ggfortify)
 
 final <- read.table('finaldata.txt', header = TRUE, sep = '\t', check.names = FALSE)
